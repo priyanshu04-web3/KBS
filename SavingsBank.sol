@@ -28,6 +28,10 @@ contract SavingsBank {
 
         // Ensure sufficient balance exists
         require(_amount <= address(this).balance, "Insufficient balance");
+        // Transfer ETH to owner
+        payable(owner).transfer(_amount);
+}
+
 
        
 }
