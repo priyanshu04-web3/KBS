@@ -3,17 +3,17 @@ pragma solidity ^0.8.0;
 
 contract SavingsBank {
 
-    // Address of the owner (person who deploys the contract)
+    // Address of the owner 
     address public owner;
 
-    // Constructor runs only once at deployment
     constructor() {
         owner = msg.sender;
     }
 
-    // Function to deposit ETH into the contract
+    // Function to deposit ETH
     function deposit() public payable {
         // payable allows this function to receive ETH
+        // public allows anyone to deposit ETH
     }
 
     // Function to check total ETH balance of the contract
@@ -29,7 +29,5 @@ contract SavingsBank {
         // Ensure sufficient balance exists
         require(_amount <= address(this).balance, "Insufficient balance");
 
-        // Transfer ETH to owner
-        payable(owner).transfer(_amount);
-    }
+       
 }
